@@ -1,0 +1,156 @@
+<body>
+  <p>
+    <mat-toolbar class="bg-info d-flex justify-content-between mb-3">
+      <button class="btn btn-primary m-2" routerLink="/" style="margin-right: auto;" mat-mini-fab color="accent"
+        type="button">
+        <mat-icon>home</mat-icon>
+      </button>
+
+      <span>
+        <mat-icon>filter_hdr</mat-icon>Valley Forge <img style="width:auto;height:50px;"
+          src="https://www.pngall.com/wp-content/uploads/2018/03/Camp-PNG-Clipart.png"> Booking<mat-icon>filter_hdr
+        </mat-icon>
+      </span>
+
+      <button class="btn btn-primary m-2" routerLink="/mb" style=" margin-left: auto;" mat-raised-button
+        color="accent" type="button">Manage Booking <mat-icon>account_circle</mat-icon></button>
+    </mat-toolbar>
+  </p>
+
+  <div class="container">
+    <mat-stepper [linear]="isLinear" #stepper>
+      <!-------------------------------------------------------------------------------------------->
+      <!--------------------------------------------------------------------------------------------->
+      <!--------------------------------------------------------------------------------------------->
+      <mat-step>
+        <ng-template matStepLabel>Credentials</ng-template>
+        <div>
+          <div class="container">
+            <div class="row">
+              <div class="col-sm-5 border"><img src="{{campDetails.url}}" style="width:100%;height: auto;">
+                <div class="row m-2">
+                  <div class="mb-3 col-sm-6">
+                    <label>Camp Name: <h2>{{campDetails.name}}</h2> </label>
+                  </div>
+                  <div class="mb-3 col-sm-6">
+                    <label>Rate: <h3>INR. {{campDetails.rate}} per night</h3> </label>
+                  </div>
+                </div>
+              </div>
+              <div class="col-sm-7 border">
+                <form [formGroup]="firstFormGroup">
+                  <div class="row">
+                    <div class="col-sm-12 mb-3">
+                      <h1>Enter Details</h1>
+                    </div>
+                  </div>
+                  <div class="row">
+                    <div class="col-sm-4 mb-3">
+                      <label>Billing Address</label>
+                    </div>
+                    <div class="col-sm-8 mb-3">
+                      <input formControlName="billingAddress" type="text" class="form-control" placeholder="Address">
+                    </div>
+                  </div>
+                  <div class="row">
+                    <div class="col-sm-4 mb-3">
+                      <label>State</label>
+                    </div>
+                    <div class="col-sm-8 mb-3">
+                      <input formControlName="state" type="text" class="form-control" placeholder="State">
+                    </div>
+                  </div>
+                  <div class="row">
+                    <div class="col-sm-4 mb-3">
+                      <label>Country</label>
+                    </div>
+                    <div class="col-sm-8 mb-3">
+                      <input formControlName="country" type="text" class="form-control" placeholder="Country">
+                    </div>
+                  </div>
+                  <div class="row">
+                    <div class="col-sm-4 mb-3">
+                      <label>ZipCode</label>
+                    </div>
+                    <div class="col-sm-8 mb-3">
+                      <input formControlName="zipCode" type="text" class="form-control" placeholder="ZipCode">
+                    </div>
+                  </div>
+                  <div class="row">
+                    <div class="col-sm-4 mb-3">
+                      <label>Cell Phone</label>
+                    </div>
+                    <div class="col-sm-8 mb-3">
+                      <input type="text" formControlName="cellPhone" class="form-control" placeholder="Cell Phone">
+                    </div>
+                  </div>
+                  <div class="row">
+                    <div class="col-sm-10 mb-3"></div>
+                    <div class="col-sm-2 mb-3">
+                      <button mat-raised-button color="accent" type="button" (click)="firstSubmit()"
+                        matStepperNext>Next</button>
+                    </div>
+
+                  </div>
+                </form>
+              </div>
+            </div>
+          </div>
+        </div>
+      </mat-step>
+      <!--------------------------------------------------------------------------------------------->
+      <!--------------------------------------------------------------------------------------------->
+      <!--------------------------------------------------------------------------------------------->
+      <mat-step label="Fill details">
+        <div class="container border">
+
+          <div class="row justify-content-center">
+            <div class="col-sm-3 mb-3">
+              <p>Check in:</p><input type="date" [checked]="setMin()" max="{{Date2 | date:'yyyy-MM-dd'}}" min="{{minDate | date:'yyyy-MM-dd'}}" [(ngModel)]="Date1">
+            </div>
+            <div class="col-sm-3  mb-3">
+              <p>Check out:</p><input  type="date" [checked]="CalculateDays()" min="{{minDate1 | date:'yyyy-MM-dd'}}"[(ngModel)]="Date2">
+            </div>
+          </div>
+          <div class="row justify-content-center">
+            <div class="col-sm-3 mb-3">
+              <p>Total Stay:</p>
+            </div> 
+            <div class="col-sm-3 mb-3"><p>{{Days}}</p></div>
+          </div><div class="row justify-content-center">
+            <div class="col-sm-3 mb-3">
+              <p>Total Amount:</p>
+            </div><div class="col-sm-3 mb-3"><p>INR.{{actual}}/-</p></div>
+          </div>
+          <div class="row justify-content-center">
+            <div class="col-sm-3 mb-3">
+              <label type="text"  class="form-control">After applying coupon:{{message}}</label>
+            </div>
+            <div class="col-sm-3 mb-3">
+              <label type="text"  class="form-control">{{multi}}</label>
+            </div>
+          </div>
+          <div class="row justify-content-center">
+            <div class="col-sm-5"> <button mat-button matStepperPrevious>Back</button></div>
+            <div class="col-sm-5"> <button mat-raised-button type="button" color="primary" (click)="secondSubmit()" >Confirm</button></div>
+            <div class="col-sm-2"> <button mat-raised-button matStepperNext type="button" color="accent" *ngIf="next">Next</button></div>
+         
+          </div>
+          <hr>
+        </div>
+      </mat-step>
+      <!--------------------------------------------------------------------------------------------->
+      <!--------------------------------------------------------------------------------------------->
+      <!--------------------------------------------------------------------------------------------->
+      <mat-step>
+        <ng-template matStepLabel>Done</ng-template>
+        <p>You are now done.</p>
+         
+        <div>
+          <button mat-button matStepperPrevious>Back</button>
+          <button mat-button (click)="stepper.reset()">Reset</button>
+        </div>
+      </mat-step>
+    </mat-stepper>
+  </div>
+</body>

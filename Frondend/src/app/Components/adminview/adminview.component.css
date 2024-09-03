@@ -1,0 +1,8 @@
+body{
+    background-image:url('https://images.pexels.com/photos/2398220/pexels-photo-2398220.jpeg?auto=compress&cs=tinysrgb&w=1260&h=750&dpr=1');
+    background-size: cover;
+    overflow:scroll;
+}
+ul {
+    list-style: none;
+  }

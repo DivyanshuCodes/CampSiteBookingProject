@@ -1,0 +1,100 @@
+<body>
+  <p>
+    <mat-toolbar class="bg-warning d-flex justify-content-between mb-3">
+      <button class="btn btn-primary m-2" routerLink="/" style="margin-right: auto;" mat-mini-fab color="accent"
+        type="button">
+        <mat-icon>home</mat-icon>
+      </button>
+
+      <span>
+        <mat-icon>filter_hdr</mat-icon>Valley Forge <img style="width:auto;height:50px;"
+          src="https://www.pngall.com/wp-content/uploads/2018/03/Camp-PNG-Clipart.png"> Booking<mat-icon>filter_hdr
+        </mat-icon>
+      </span>
+
+      <button class="btn btn-primary m-2" routerLink="/login" style=" margin-left: auto;" mat-raised-button
+        color="accent" type="button">AdminLogin <mat-icon>account_circle</mat-icon></button>
+
+    </mat-toolbar>
+  </p>
+
+  <main class="container">
+
+    <div class="album mt-4 bg-transparent row">
+      <div class="col-sm-5">
+        <div class="input-group mb-3">
+          <button mat-mini-fab (click)="onCapacityFilterClear()" class="btn bg-danger" type="button">
+            <mat-icon>clear</mat-icon>
+          </button>
+          <input type="text" class="form-control" [(ngModel)]='Capacity' placeholder="Capacity">
+
+          <button mat-mini-fab (click)="onCapacityFilter()" class="btn" type="button" id="button-addon2">
+            <mat-icon>search</mat-icon>
+          </button>
+        </div>
+      </div>
+      <div class="col-sm-5">
+        <label> Sort By &nbsp;</label>
+
+<select [(ngModel)]='SortbyParam'>
+
+    <option value="capacity">Capacity</option>
+
+    <option value="rate">Rate</option>
+
+</select>
+        <button type="button" (click)="onSortDirection()">
+
+          <i *ngIf="SortDirection==='asc'" class="fas fa-sort-alpha-down"></i>
+          
+          <i *ngIf="SortDirection==='desc'" class="fas fa-sort-alpha-up"></i>
+          </button>
+      </div>
+      <div class="col-sm-2">
+        <div class="input-group mb-3">
+
+
+          <button mat-raised-button routerLink="/mb" class="btn btn-outline-secondary" type="button">Manage Booking </button>
+        </div>
+      </div>
+
+      <hr class="my-6">
+      <div class="row row-cols-1 row-cols-sm-2 row-cols-md-3 g-3">
+
+        <div class="col"
+          *ngFor="let data of Data|filter:SearchCapacity:'capacity'| sort:[SortbyParam,SortDirection]| paginate: { itemsPerPage: 3, currentPage: p}"
+          id="row">
+
+          <div class="card shadow-sm">
+            <img class="bd-placeholder-img card-img-top" style="width:auto;height:225px ;" src="{{data.url}}"
+              focusable="false">
+            <title>Placeholder</title>
+
+            <div class="card-body">
+              <ul>
+                <li>CampId: {{data.campId}}</li>
+                <li>Name: {{data.name}}</li>
+                <li>Capacity: {{data.capacity}}</li>
+                <li>Description: {{data.description}}</li>
+              </ul>
+              <div class="d-flex justify-content-between align-items-center">
+                <div class="btn-group">
+
+                  <button type="button" routerLink="/bs" (click)="BookNow(data)"
+                    class="btn btn-sm btn-outline-secondary" *ngIf="(data.status=='Available')">Book now</button>
+                    <button type="button" routerLink="/bs" (click)="BookNow(data)"
+                    class="btn btn-sm btn-outline-secondary" *ngIf="(data.status=='Booked')" disabled>Booked</button>
+                </div>
+                <small class="text-muted">INR.{{data.rate}}/-</small>
+              </div>
+            </div>
+          </div>
+        </div>
+
+      </div>
+      <pagination-controls (pageChange)="p = $event" class="text-center m-2" style="color: white;">
+      </pagination-controls>
+    </div>
+
+  </main>
+</body>

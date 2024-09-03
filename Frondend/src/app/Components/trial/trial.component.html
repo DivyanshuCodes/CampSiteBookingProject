@@ -1,0 +1,18 @@
+<div class="container">
+    <div class="row ">
+        <div class="col-sm-6 border">
+        <p>Day  1:</p><input type="date" [(ngModel)]="Date1">
+        <p>Day  2:</p><input type="date" [(ngModel)]="Date2"><br>
+        <button type="submit" (click)="CalculateDays()">Calculate</button><br>
+        <strong>Number of days:{{Days}}</strong>
+    </div>
+    <div class="col-lg-4 col-md-4 col-sm-4" id="collapseTwo">
+        <h2>What</h2> 
+        <p>Find out what we do</p>
+        <div id="what" class="collapse">
+         <p>Text here.</p>
+  
+        <a class="btn btn-default" data-toggle="collapse" data-parent="#threeW" href="#what" role="button">Read More &raquo;</a>
+      </div>
+    </div>
+</div>

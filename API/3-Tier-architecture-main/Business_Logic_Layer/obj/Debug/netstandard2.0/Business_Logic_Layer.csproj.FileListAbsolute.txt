@@ -1,0 +1,38 @@
+C:\Users\A\source\repos\WebApplication6\Business_Logic_Layer\obj\Debug\netstandard2.0\Business_Logic_Layer.csprojAssemblyReference.cache
+C:\Users\A\source\repos\WebApplication6\Business_Logic_Layer\obj\Debug\netstandard2.0\Business_Logic_Layer.AssemblyInfoInputs.cache
+C:\Users\A\source\repos\WebApplication6\Business_Logic_Layer\obj\Debug\netstandard2.0\Business_Logic_Layer.AssemblyInfo.cs
+C:\Users\A\source\repos\WebApplication6\Business_Logic_Layer\obj\Debug\netstandard2.0\Business_Logic_Layer.csproj.CoreCompileInputs.cache
+C:\Users\A\source\repos\WebApplication6\Business_Logic_Layer\bin\Debug\netstandard2.0\Business_Logic_Layer.deps.json
+C:\Users\A\source\repos\WebApplication6\Business_Logic_Layer\bin\Debug\netstandard2.0\Business_Logic_Layer.dll
+C:\Users\A\source\repos\WebApplication6\Business_Logic_Layer\bin\Debug\netstandard2.0\Business_Logic_Layer.pdb
+C:\Users\A\source\repos\WebApplication6\Business_Logic_Layer\bin\Debug\netstandard2.0\Data_Access_Layer.dll
+C:\Users\A\source\repos\WebApplication6\Business_Logic_Layer\bin\Debug\netstandard2.0\Data_Access_Layer.pdb
+C:\Users\A\source\repos\WebApplication6\Business_Logic_Layer\obj\Debug\netstandard2.0\Business_Logic_Layer.csproj.CopyComplete
+C:\Users\A\source\repos\WebApplication6\Business_Logic_Layer\obj\Debug\netstandard2.0\Business_Logic_Layer.dll
+C:\Users\A\source\repos\WebApplication6\Business_Logic_Layer\obj\Debug\netstandard2.0\Business_Logic_Layer.pdb
+C:\Users\divyanshuchouhan\Desktop\API\3-Tier-architecture-main\3-Tier-architecture-main\Business_Logic_Layer\bin\Debug\netstandard2.0\Business_Logic_Layer.deps.json
+C:\Users\divyanshuchouhan\Desktop\API\3-Tier-architecture-main\3-Tier-architecture-main\Business_Logic_Layer\bin\Debug\netstandard2.0\Business_Logic_Layer.dll
+C:\Users\divyanshuchouhan\Desktop\API\3-Tier-architecture-main\3-Tier-architecture-main\Business_Logic_Layer\bin\Debug\netstandard2.0\Business_Logic_Layer.pdb
+C:\Users\divyanshuchouhan\Desktop\API\3-Tier-architecture-main\3-Tier-architecture-main\Business_Logic_Layer\bin\Debug\netstandard2.0\Data_Access_Layer.dll
+C:\Users\divyanshuchouhan\Desktop\API\3-Tier-architecture-main\3-Tier-architecture-main\Business_Logic_Layer\bin\Debug\netstandard2.0\Data_Access_Layer.pdb
+C:\Users\divyanshuchouhan\Desktop\API\3-Tier-architecture-main\3-Tier-architecture-main\Business_Logic_Layer\obj\Debug\netstandard2.0\Business_Logic_Layer.csproj.AssemblyReference.cache
+C:\Users\divyanshuchouhan\Desktop\API\3-Tier-architecture-main\3-Tier-architecture-main\Business_Logic_Layer\obj\Debug\netstandard2.0\Business_Logic_Layer.GeneratedMSBuildEditorConfig.editorconfig
+C:\Users\divyanshuchouhan\Desktop\API\3-Tier-architecture-main\3-Tier-architecture-main\Business_Logic_Layer\obj\Debug\netstandard2.0\Business_Logic_Layer.AssemblyInfoInputs.cache
+C:\Users\divyanshuchouhan\Desktop\API\3-Tier-architecture-main\3-Tier-architecture-main\Business_Logic_Layer\obj\Debug\netstandard2.0\Business_Logic_Layer.AssemblyInfo.cs
+C:\Users\divyanshuchouhan\Desktop\API\3-Tier-architecture-main\3-Tier-architecture-main\Business_Logic_Layer\obj\Debug\netstandard2.0\Business_Logic_Layer.csproj.CoreCompileInputs.cache
+C:\Users\divyanshuchouhan\Desktop\API\3-Tier-architecture-main\3-Tier-architecture-main\Business_Logic_Layer\obj\Debug\netstandard2.0\Business_Logic_Layer.csproj.CopyComplete
+C:\Users\divyanshuchouhan\Desktop\API\3-Tier-architecture-main\3-Tier-architecture-main\Business_Logic_Layer\obj\Debug\netstandard2.0\Business_Logic_Layer.dll
+C:\Users\divyanshuchouhan\Desktop\API\3-Tier-architecture-main\3-Tier-architecture-main\Business_Logic_Layer\obj\Debug\netstandard2.0\Business_Logic_Layer.pdb
+C:\Users\divyanshuchouhan\Desktop\divyanshu-chouhan\divyanshu-chouhan\Exit Project\3-Tier-architecture-main\3-Tier-architecture-main\Business_Logic_Layer\bin\Debug\netstandard2.0\Business_Logic_Layer.deps.json
+C:\Users\divyanshuchouhan\Desktop\divyanshu-chouhan\divyanshu-chouhan\Exit Project\3-Tier-architecture-main\3-Tier-architecture-main\Business_Logic_Layer\bin\Debug\netstandard2.0\Business_Logic_Layer.dll
+C:\Users\divyanshuchouhan\Desktop\divyanshu-chouhan\divyanshu-chouhan\Exit Project\3-Tier-architecture-main\3-Tier-architecture-main\Business_Logic_Layer\bin\Debug\netstandard2.0\Business_Logic_Layer.pdb
+C:\Users\divyanshuchouhan\Desktop\divyanshu-chouhan\divyanshu-chouhan\Exit Project\3-Tier-architecture-main\3-Tier-architecture-main\Business_Logic_Layer\bin\Debug\netstandard2.0\Data_Access_Layer.dll
+C:\Users\divyanshuchouhan\Desktop\divyanshu-chouhan\divyanshu-chouhan\Exit Project\3-Tier-architecture-main\3-Tier-architecture-main\Business_Logic_Layer\bin\Debug\netstandard2.0\Data_Access_Layer.pdb
+C:\Users\divyanshuchouhan\Desktop\divyanshu-chouhan\divyanshu-chouhan\Exit Project\3-Tier-architecture-main\3-Tier-architecture-main\Business_Logic_Layer\obj\Debug\netstandard2.0\Business_Logic_Layer.csproj.AssemblyReference.cache
+C:\Users\divyanshuchouhan\Desktop\divyanshu-chouhan\divyanshu-chouhan\Exit Project\3-Tier-architecture-main\3-Tier-architecture-main\Business_Logic_Layer\obj\Debug\netstandard2.0\Business_Logic_Layer.GeneratedMSBuildEditorConfig.editorconfig
+C:\Users\divyanshuchouhan\Desktop\divyanshu-chouhan\divyanshu-chouhan\Exit Project\3-Tier-architecture-main\3-Tier-architecture-main\Business_Logic_Layer\obj\Debug\netstandard2.0\Business_Logic_Layer.AssemblyInfoInputs.cache
+C:\Users\divyanshuchouhan\Desktop\divyanshu-chouhan\divyanshu-chouhan\Exit Project\3-Tier-architecture-main\3-Tier-architecture-main\Business_Logic_Layer\obj\Debug\netstandard2.0\Business_Logic_Layer.AssemblyInfo.cs
+C:\Users\divyanshuchouhan\Desktop\divyanshu-chouhan\divyanshu-chouhan\Exit Project\3-Tier-architecture-main\3-Tier-architecture-main\Business_Logic_Layer\obj\Debug\netstandard2.0\Business_Logic_Layer.csproj.CoreCompileInputs.cache
+C:\Users\divyanshuchouhan\Desktop\divyanshu-chouhan\divyanshu-chouhan\Exit Project\3-Tier-architecture-main\3-Tier-architecture-main\Business_Logic_Layer\obj\Debug\netstandard2.0\Business_Logic_Layer.csproj.CopyComplete
+C:\Users\divyanshuchouhan\Desktop\divyanshu-chouhan\divyanshu-chouhan\Exit Project\3-Tier-architecture-main\3-Tier-architecture-main\Business_Logic_Layer\obj\Debug\netstandard2.0\Business_Logic_Layer.dll
+C:\Users\divyanshuchouhan\Desktop\divyanshu-chouhan\divyanshu-chouhan\Exit Project\3-Tier-architecture-main\3-Tier-architecture-main\Business_Logic_Layer\obj\Debug\netstandard2.0\Business_Logic_Layer.pdb

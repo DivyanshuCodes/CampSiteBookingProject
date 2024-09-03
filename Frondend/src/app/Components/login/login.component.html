@@ -1,0 +1,30 @@
+<body>
+    <mat-toolbar color="primary">
+      <button mat-icon-button routerLink="/" color="btn-info" aria-label="Example icon button with a home icon">
+        <mat-icon>home</mat-icon>
+      </button>
+      </mat-toolbar>
+    <div class="container col-xl-10 col-xxl-8 px-4 py-5">
+        <div class="row align-items-center g-lg-5 py-5">
+          <div class="col-md-10 mx-auto col-lg-5">
+            
+            <form [formGroup]="loginForm" class="p-4 p-md-5 border rounded-3 bg-light" >
+              <div class="form-floating mb-3">
+                <input formControlName="email" type="email" class="form-control" id="floatingInput" placeholder="name@example.com">
+                <label for="floatingInput">Email address</label>
+                <span class="text-danger" *ngIf="loginForm.controls['email'].touched && loginForm.hasError('required','email')">*Email is required</span>
+              </div>
+              <div class="form-floating mb-3">
+                <input  formControlName="password" type="password" class="form-control" id="floatingPassword" placeholder="Password">
+                <label  for="floatingPassword">Password</label>
+                <span class="text-danger" *ngIf="loginForm.controls['password'].touched && loginForm.hasError('required','password')">*Password is required</span>
+              </div>
+            
+              <button (click)="onLogin()" class="w-100 btn btn-lg btn-primary" [disabled]="!loginForm.valid" type="submit">Login</button>
+              <hr class="my-4">
+              <a routerLink="/signup" class="text-muted">Don't have an account?</a>
+            </form>
+          </div>
+        </div>
+      </div>
+    </body>

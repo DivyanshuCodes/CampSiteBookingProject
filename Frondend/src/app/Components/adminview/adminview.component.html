@@ -1,0 +1,200 @@
+<body>
+  <p>
+    <mat-toolbar class="bg-warning d-flex justify-content-between mb-3">
+      <button class="btn btn-primary m-2" routerLink="/" style="margin-right: auto;" mat-mini-fab color="accent"
+        type="button">
+        <mat-icon>home</mat-icon>
+      </button>
+
+      <span>
+        <mat-icon>filter_hdr</mat-icon>Valley Forge <img style="width:auto;height:50px;"
+          src="https://www.pngall.com/wp-content/uploads/2018/03/Camp-PNG-Clipart.png"> Booking<mat-icon>filter_hdr
+        </mat-icon>
+      </span>
+
+      <button class="btn btn-primary m-2" routerLink="/log" style=" margin-left: auto;" mat-raised-button
+        color="accent" type="button">Logout <mat-icon>account_circle</mat-icon></button>
+
+    </mat-toolbar>
+  </p>
+  <mat-tab-group #tabGroup>
+    <!------------------------------------------------------------------------------------------------------------------------->
+    <!---Add Camp----------------------------------------------------------------------------------------------------------->
+    <!------------------------------------------------------------------------------------------------------------------------->
+    <mat-tab label="Add Camp">
+      <div class="container">
+        <div class="row mt-4">
+          <div class="col-sm-5 rounded-3 ">
+
+            <form [formGroup]="campForm" class="bg-light border rounded-3 p-3" (ngSubmit)=" onCampCreate() ">
+              <div class="">
+                <h1 class="text-center text-white rounded-3 fw-bold bg-info">Create <img style="width:auto;height:50px;"
+                    src="https://www.pngall.com/wp-content/uploads/2018/03/Camp-PNG-Clipart.png"></h1>
+              </div>
+              <div class="row">
+                <label for="validationTextarea" class="form-label">Camp Id</label>
+                <input formControlName="campId" class="form-control" id="validationTextarea" placeholder="Camp Id"
+                  required>
+                  <small  class="text-danger" *ngIf="campForm.controls['campId'].touched && campForm.hasError('pattern','campId')">Please enter valid Camp-Id</small>
+                  <small  class="text-danger" *ngIf="campForm.controls['campId'].touched && campForm.hasError('required','campId')">Camp Id can't be null!</small>
+              </div>
+              <div class="row">
+                <label for="validationTextarea" class="form-label">Camp name</label>
+                <input formControlName="name" class="form-control" id="validationTextarea" placeholder="Camp name"
+                  required>
+                  <small  class="text-danger" *ngIf="campForm.controls['name'].touched && campForm.hasError('pattern','name')">Please enter valid name!</small>
+                  <small  class="text-danger" *ngIf="campForm.controls['name'].touched && campForm.hasError('required','name')">Name can't be null!</small>
+                </div>
+              <div class="row ">
+                <div class="col">
+                  <label for="validationTextarea" class="form-label">Rate per night</label>
+                  <input formControlName="rate" class="form-control" id="validationTextarea"
+                    placeholder="Rate per night" required>
+                    <small  class="text-danger" *ngIf="campForm.controls['rate'].touched && campForm.hasError('pattern','rate')">Please enter valid amount!</small>
+                    <small  class="text-danger" *ngIf="campForm.controls['rate'].touched && campForm.hasError('required','rate')">Rate can't be null!</small>
+                </div>
+                <div class="col">
+                  <label for="validationTextarea" class="form-label">Capacity</label>
+                  <input formControlName="capacity" class="form-control" id="validationTextarea" placeholder="Capacity"
+                    required>
+                    <small  class="text-danger" *ngIf="campForm.controls['capacity'].touched && campForm.hasError('pattern','capacity')">Invalid Capacity!</small>
+                    <small  class="text-danger" *ngIf="campForm.controls['capacity'].touched && campForm.hasError('required','name')">Capacity can't be null!</small>
+                </div>
+              </div>
+              <div class="">
+                <label for="validationTextarea" class="form-label">Description</label>
+                <textarea formControlName="description" class="form-control" id="validationTextarea"
+                  placeholder="Please tell something about the camp" required></textarea>
+                  <small  class="text-danger" *ngIf="campForm.controls['description'].touched && campForm.hasError('maxLength','description')">Exceeded max length</small>
+                  <small  class="text-danger" *ngIf="campForm.controls['description'].touched && campForm.hasError('required','description')">Please write something in the description box!</small>
+              </div>
+              <div class="">
+                <label for="validationTextarea" class="form-label">Upload images</label>
+                <input type="text" formControlName="url" class="url" class="form-control" aria-label="file example"
+                  placeholder="Enter image url" required>
+                  
+                  <small  class="text-danger" *ngIf="campForm.controls['url'].touched && campForm.hasError('required','url')">Url can't be empty</small>
+              </div>
+              <div class="mt-2">
+                <button mat-flat-button color="primary" [disabled]="!campForm.valid" >Submit</button>
+              </div>
+            </form>
+          </div>
+
+        </div>
+      </div>
+    </mat-tab>
+
+    <!------------------------------------------------------------------------------------------------------------------------->
+    <!---Manage Camp----------------------------------------------------------------------------------------------------------->
+    <!------------------------------------------------------------------------------------------------------------------------->
+    <mat-tab label="Second">
+      <div class="container">
+        <div class="album mt-4 bg-transparent">
+          <div class="row row-cols-1 row-cols-sm-2 row-cols-md-3 g-3">
+
+            <div class="col" *ngFor="let data of Data| paginate: { itemsPerPage: 3, currentPage: p}">
+              <div class="card shadow-sm">
+                <img class="bd-placeholder-img card-img-top" style="width:auto;height:225px ;" src="{{data.url}}"
+                  focusable="false">
+                <title>Placeholder</title>
+
+                <div class="card-body">
+                  <ul>
+                    <li>CampId:{{data.campId}}</li>
+                    <li>Name:{{data.name}}</li>
+                    <li>Capacity:{{data.capacity}}</li>
+                    <li>Description:{{data.description}}</li>
+                  </ul>
+                  <div class="d-flex justify-content-between align-items-center">
+                    <div class="btn-group">
+                      <button type="button" (click)="delCamp(data)"
+                        class="btn btn-sm btn-outline-secondary">Delete</button>
+                      <button type="button" routerLink="/admin" class="btn btn-sm btn-outline-secondary"
+                        (click)="tabGroup.selectedIndex=2" (click)="updateCamp(data)">Edit</button>
+                    </div>
+                    <small class="text-muted">INR.{{data.rate}}/-</small>
+                  </div>
+                </div>
+              </div>
+            </div>
+
+          </div>
+        </div>
+        <pagination-controls (pageChange)="p = $event" class="text-center m-2" style="color: white;">
+        </pagination-controls>
+      </div>
+    </mat-tab>
+
+
+    <!------------------------------------------------------------------------------------------------------------------------->
+    <!---Update Camp----------------------------------------------------------------------------------------------------------->
+    <!------------------------------------------------------------------------------------------------------------------------->
+
+
+    <mat-tab label="Update Camp">
+      <div class="container">
+        <div class="row mt-4">
+          <div class="col-sm-5 rounded-3 ">
+
+            <form [formGroup]="editForm" class="bg-light border rounded-3 p-3" (ngSubmit)=" editCamp() ">
+              <div class="">
+                <h1 class="text-center text-white rounded-3 fw-bold bg-info">Update <img style="width:auto;height:50px;"
+                    src="https://www.pngall.com/wp-content/uploads/2018/03/Camp-PNG-Clipart.png"></h1>
+              </div>
+              <div class="">
+                <label for="validationTextarea" class="form-label">Camp Id <b>{{obj.campId}}</b></label>
+
+              </div>
+              <div class="">
+                <label for="validationTextarea" class="form-label">Camp name</label>
+                <input formControlName="name" value="{{obj.name}}" class="form-control" id="validationTextarea"
+                  placeholder="Camp name" required>
+                <div class="invalid-feedback">
+                  Please enter a valid name.
+                </div>
+              </div>
+              <div class="row ">
+                <div class="col">
+                  <label for="validationTextarea" class="form-label">Rate per night</label>
+                  <input formControlName="rate" value="{{obj.rate}}" class="form-control" id="validationTextarea"
+                    placeholder="Rate per night" required>
+                  <div class="invalid-feedback">
+                    Please enter any amount.
+                  </div>
+                </div>
+                <div class="col">
+                  <label for="validationTextarea" class="form-label">Capacity</label>
+                  <input formControlName="capacity" value="{{obj.capacity}}" class="form-control"
+                    id="validationTextarea" placeholder="Capacity" required>
+                  <div class="invalid-feedback">
+                    Please enter capacity.
+                  </div>
+                </div>
+              </div>
+              <div class="">
+                <label for="validationTextarea" class="form-label">Description</label>
+                <textarea formControlName="description" value="{{obj.description}}" class="form-control"
+                  id="validationTextarea" placeholder="Please tell something about the camp" required></textarea>
+                <div class="invalid-feedback">
+                  Please enter a message in the textarea.
+                </div>
+              </div>
+              <div class="">
+                <label for="validationTextarea" class="form-label">Upload images</label>
+                <input type="url" formControlName="url" class="url" value="{{obj.url}}" class="form-control"
+                  aria-label="file example" placeholder="Enter image url" required>
+                <div class="invalid-feedback">Example invalid form file feedback</div>
+              </div>
+              <div class="mt-2">
+                <button mat-flat-button color="primary">Submit</button>
+              </div>
+            </form>
+          </div>
+
+        </div>
+      </div>
+    </mat-tab>
+  </mat-tab-group>
+
+</body>
